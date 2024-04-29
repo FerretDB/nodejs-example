@@ -1,7 +1,6 @@
-const { MongoClient } = require("mongodb");
-
+/* eslint-disable no-undef */
+const { MongoClient, ServerApiVersion } = require("mongodb");
 const { parseArgs } = require('node:util');
-const args = ['--uri', 'u', '--strict'];
 
 const options = {
     uri: {
@@ -12,15 +11,31 @@ const options = {
         short: 's',
     },
 };
-const { values, tokens } = parseArgs({ options, tokens: true });
+const { values } = parseArgs({ options, tokens: false });
+
+console.log(values.uri);
 
 const uri = values.uri;
 
-const client = new MongoClient(uri);
+let client;
+
+if (values.strict) {
+    client = new MongoClient(uri,  {
+        serverApi: {
+            version: ServerApiVersion.v1,
+            strict: true,
+        }
+    });
+
+    console.log("Using strict mode");
+} else {
+    client = new MongoClient(uri);
+}
+
 
 async function run() {
   try {
-    // TODO finish
+    // 1. 
     let res = await client.db("admin").command({ ping: 1 });
     console.log(res);
   } finally {
