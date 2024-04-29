@@ -37,7 +37,6 @@ async function run() {
     assert.equal(res.ok, 1, 'dropDatabase failed');
     
     let docs = [];
-
     for (let i = 1; i <= 4; i++) {
       docs.push({ _id: i, a: i });
     }
