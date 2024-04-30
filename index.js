@@ -32,7 +32,7 @@ if (values.strict) {
 async function run() {
   try {
     let res = await client.db('test').command({ ping: 1 });
-    assert.equal(res.ok, 1, "ping failed");
+    assert.equal(res.ok, 1, 'ping failed');
     res = await client.db('test').command({ dropDatabase: 1 });
     assert.equal(res.ok, 1, 'dropDatabase failed');
     
