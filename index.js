@@ -19,7 +19,7 @@ const uri = values.uri;
 let client;
 
 if (values.strict) {
-    client = new MongoClient(uri,  {
+    client = new MongoClient(uri, {
         serverApi: {
             version: ServerApiVersion.v1,
             strict: true,
