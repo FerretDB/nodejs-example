@@ -1,6 +1,6 @@
-# Quick Start: Node.js and MongoDB
+# Quick Start: Node.js and FerretDB
 
-This is a fork of https://github.com/FerretDB/nodejs-example, simplified to run with FerretDB.
+This is a fork of https://github.com/mongodb-developer/nodejs-quickstart, simplified for FerretDB testing.
 
 ### Execution Steps
 
